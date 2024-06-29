@@ -5,7 +5,7 @@ public class BulletBattery : MonoBehaviour
     public GameObject bulletPrefab;
     Transform player;
     public float fireRate;
-    public int numberOfBullets; // Šï”‚É‚·‚é‚±‚Æ
+    public int numberOfBullets;
     public float bulletSpeed;
     public float spreadAngle;
 
