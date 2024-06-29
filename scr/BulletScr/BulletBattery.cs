@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Enemy01 : MonoBehaviour
+public class BulletBattery : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public Transform player;
-    public float fireRate = 1f;
-    public int numberOfBullets = 5; // Šï”‚É‚·‚é‚±‚Æ
-    public float bulletSpeed = 10f;
-    public float spreadAngle = 30f;
+    Transform player;
+    public float fireRate;
+    public int numberOfBullets; // Šï”‚É‚·‚é‚±‚Æ
+    public float bulletSpeed;
+    public float spreadAngle;
 
     private float nextFireTime = 0f;
     private IShootingPattern shootingPattern;
@@ -16,6 +16,7 @@ public class Enemy01 : MonoBehaviour
     void Start()
     {
         shootingPattern = GetComponent<IShootingPattern>();
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OddBullets : MonoBehaviour, IShootingPattern
+public class NormalBullets : MonoBehaviour, IShootingPattern
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,9 +23,6 @@ public class OddBullets : MonoBehaviour, IShootingPattern
         float spreadAngle) {
         // Calculate the base direction towards the player
         Vector3 directionToPlayer = (playerTransform.position - enemyTransform.position).normalized;
-
-        // Calculate the right vector for the spread
-        Vector3 right = Vector3.Cross(Vector3.up, directionToPlayer);
 
         // Calculate the initial angle
         float halfSpread = spreadAngle / 2;
