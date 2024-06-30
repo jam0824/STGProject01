@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -6,6 +7,7 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     private int BULLET_NUM = 0;
+    
 
     // プロパティを通じてインスタンスにアクセス
     public static GameManager Instance {
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     // ゲームマネージャーの初期化処理
     void Start() {
-        // 初期化コードをここに追加
+        
     }
 
     // ゲームマネージャーの更新処理
@@ -54,4 +56,6 @@ public class GameManager : MonoBehaviour
     }
 
     
+
+
 }

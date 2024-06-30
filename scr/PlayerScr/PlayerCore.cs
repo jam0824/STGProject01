@@ -6,7 +6,7 @@ public class PlayerCore : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject obj = transform.parent.gameObject;
+        GameObject obj = GameObject.Find("PlayerManager");
         action = obj.GetComponent<PlayerAction>();
     }
 
