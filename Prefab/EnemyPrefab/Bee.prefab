@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a7a3578199e5c47a324725a36f12fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 10
+  Hp: 3
   ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
 --- !u!135 &4047584596272552454
 SphereCollider:
@@ -1011,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 9150547488052142394, guid: 72bfc43cb2aa2304e8fed7ac1a9c0b07, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 7731994679418012711, guid: 06fdf3a950e6bd34c8350bc07a7d650e, type: 3}
+      objectReference: {fileID: 558526362066048879, guid: db61b3384ff4ad149a2e98b499c81f72, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

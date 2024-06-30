@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     // シングルトンの初期化
     private void Awake() {
+        Application.targetFrameRate = 60; //60FPSに設定
         // すでにインスタンスが存在する場合は、現在のゲームオブジェクトを破棄
         if (_instance != null && _instance != this) {
             Destroy(this.gameObject);

@@ -4,6 +4,9 @@ public class Enemy : MonoBehaviour
 {
     public float Hp = 10;
     public GameObject ExplosionPrefab;
+
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,7 +16,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -25,4 +28,5 @@ public class Enemy : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
+
 }
