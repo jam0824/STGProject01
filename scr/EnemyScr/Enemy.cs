@@ -3,14 +3,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float Hp = 10;
+    public float MoveSpeed;
+    public float MoveDir;
     public GameObject ExplosionPrefab;
+    private IEnemyMove enemyMove;
 
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        enemyMove = GetComponent<IEnemyMove>();
+        enemyMove.EnemyMove(MoveDir, MoveSpeed);
     }
 
     // Update is called once per frame
@@ -21,10 +25,14 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag != "PlayerBullet") return;
-        float damage = collision.gameObject.GetComponent<PlayerBulletConfig>().Damage;
+        Damage(collision.gameObject);
+    }
+
+    private void Damage(GameObject playerBullet) {
+        float damage = playerBullet.GetComponent<PlayerBulletConfig>().Damage;
         Hp -= damage;
-        if(Hp <= 0) {
-            GameObject explosion = Object.Instantiate(ExplosionPrefab,this.transform.position, Quaternion.identity);
+        if (Hp <= 0) {
+            GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
             GameObject.Destroy(gameObject);
         }
     }
