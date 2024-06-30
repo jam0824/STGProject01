@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IEnemyMove
 {
-    public void EnemyMove(float angle, float speed);
+    public void EnemyMove(Rigidbody rb, EnemyAnimation enemyAnimation, float angle, float speed);
 }

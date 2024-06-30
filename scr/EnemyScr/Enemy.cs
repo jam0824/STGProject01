@@ -7,14 +7,17 @@ public class Enemy : MonoBehaviour
     public float MoveDir;
     public GameObject ExplosionPrefab;
     private IEnemyMove enemyMove;
+    Rigidbody rb;
+    EnemyAnimation enemyAnimation;
 
-    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
-        enemyMove.EnemyMove(MoveDir, MoveSpeed);
+        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed);
     }
 
     // Update is called once per frame

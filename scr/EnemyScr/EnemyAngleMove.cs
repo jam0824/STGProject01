@@ -7,9 +7,9 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        enemyAnimation = GetComponent<EnemyAnimation>();
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -17,7 +17,7 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
         
     }
 
-    public void EnemyMove(float angle, float speed) {
+    public void EnemyMove(Rigidbody rb, EnemyAnimation enemyAnimation, float angle, float speed) {
         float angleRad = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
         rb.linearVelocity = direction * speed;
