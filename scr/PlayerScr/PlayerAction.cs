@@ -40,6 +40,14 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    public void HitEnemyBullet(Collision collision) {
+        Debug.Log("EnemyBulletHit!!!!!!!!!!!!!!!!!!");
+        DeleteEnemyBullet(collision.gameObject);
+    }
 
+    private void DeleteEnemyBullet(GameObject obj) {
+        GameManager.Instance.CalcBulletNum(-1);
+        Destroy(obj);
+    }
 
 }

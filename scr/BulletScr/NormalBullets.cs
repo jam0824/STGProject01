@@ -21,8 +21,11 @@ public class NormalBullets : MonoBehaviour, IShootingPattern
         float bulletSpeed,
         int numberOfBullets,
         float spreadAngle) {
+        //y‚ð0‚É‚·‚é
+        Vector3 playerPos = playerTransform.position;
+        playerPos.y = 0;
         // Calculate the base direction towards the player
-        Vector3 directionToPlayer = (playerTransform.position - enemyTransform.position).normalized;
+        Vector3 directionToPlayer = (playerPos - enemyTransform.position).normalized;
 
         // Calculate the initial angle
         float halfSpread = spreadAngle / 2;
