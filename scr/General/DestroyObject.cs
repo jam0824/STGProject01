@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class DestroyObject : MonoBehaviour
 {
-    private float LEFT_MAX = -10.0f;
-    private float RIGHT_MAX = 10.0f;
+    private float LEFT_MAX = -8.0f;
+    private float RIGHT_MAX = 8.0f;
     private float TOP_MAX = 5.0f;
     private float BOTTOM_MAX = -5.0f;
 
