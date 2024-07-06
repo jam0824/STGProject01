@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance;
 
     private int BULLET_NUM = 0;
-    
+
+    public float TOP_BOTTOM = 4.0f;
+    public float RIGHT_LEFT = 7.0f;
 
     // プロパティを通じてインスタンスにアクセス
     public static GameManager Instance {

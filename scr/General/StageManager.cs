@@ -68,12 +68,14 @@ public class JsonLoader : MonoBehaviour
             formationPrefab.GetComponent<IFormation>().StartFormation(enemyPrefab);
         }
         
-        Debug.Log("時間: " + objData.time);
-        Debug.Log("タイプ: " + objData.type);
-        Debug.Log("プレハブ: " + objData.prefab);
-        Debug.Log("X座標: " + objData.x);
-        Debug.Log("Z座標: " + objData.z);
-        Debug.Log("敵: " + objData.enemy);
+
+        Debug.Log("時間: " + objData.time + 
+            "タイプ: " + objData.type + 
+            "プレハブ: " + objData.prefab + 
+            "X座標: " + objData.x + 
+            "Z座標: " + objData.z + 
+            "敵: " + objData.enemy);
+
 
         return isExec;
     }

@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public Transform firePoint; // ’e‚ğ”­Ë‚·‚éˆÊ’u
     public float mvVelocity = 0.005f;
     public float fireRate = 0.5f; // ’e‚ğ”­Ë‚·‚éŠÔŠui•bj
+    private int numberOfBullet = 1;
 
     private GameObject player;
     
@@ -45,6 +46,8 @@ public class PlayerManager : MonoBehaviour
     public GameObject GetPlayer() {
         return player;
     }
+
+    public int GetNumberOfBullet() {return numberOfBullet; }
 
     
 }

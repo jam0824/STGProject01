@@ -27,6 +27,12 @@ public class NormalBullets : MonoBehaviour, IShootingPattern
         // Calculate the base direction towards the player
         Vector3 directionToPlayer = (playerPos - enemyTransform.position).normalized;
 
+        //íeêîÇ™1ÇÃéûÇÕï ÅiangleStepÇ≈0äÑÇ…Ç»ÇÈÇΩÇﬂ)
+        if(numberOfBullets == 1) {
+            OneShoot(bulletPrefab, enemyTransform, bulletSpeed, directionToPlayer);
+            return;
+        }
+
         // Calculate the initial angle
         float halfSpread = spreadAngle / 2;
         float angleStep = spreadAngle / (numberOfBullets - 1);
@@ -45,5 +51,10 @@ public class NormalBullets : MonoBehaviour, IShootingPattern
             GameObject bullet = Object.Instantiate(bulletPrefab, enemyTransform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().linearVelocity = bulletDir * bulletSpeed;
         }
+    }
+
+    void OneShoot(GameObject bulletPrefab, Transform enemyTransform, float bulletSpeed, Vector3 directionToPlayer) {
+        GameObject bullet = Object.Instantiate(bulletPrefab, enemyTransform.position, Quaternion.identity);
+        bullet.GetComponent<Rigidbody>().linearVelocity = directionToPlayer * bulletSpeed;
     }
 }
