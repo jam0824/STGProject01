@@ -19,8 +19,9 @@ public class LineFormation : MonoBehaviour,IFormation
 
         for (int i = 0; i < numberOfObjects; i++) {
             Vector3 position = transform.position + direction * distanceBetweenObjects * i; // 新しい位置の計算
-            Instantiate(enemy, position, Quaternion.identity, transform); // オブジェクトを配置
+            GameObject obj = Instantiate(enemy, position, Quaternion.identity, transform); // オブジェクトを配置
+            obj.transform.parent = null;
         }
-        
+        Destroy(gameObject);
     }
 }

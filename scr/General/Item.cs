@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
     }
 
     void GetItem() {
+        GameManager.Instance.CalcItemNum(1);
         Destroy(gameObject);
     }
 }

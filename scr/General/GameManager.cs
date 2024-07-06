@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     public float TOP_BOTTOM = 4.0f;
     public float RIGHT_LEFT = 7.0f;
+    public int POWERUP_ITEM_NUM = 5;
+
+    private int playerItemNum = 0;
+
 
     // プロパティを通じてインスタンスにアクセス
     public static GameManager Instance {
@@ -58,6 +62,13 @@ public class GameManager : MonoBehaviour
         return BULLET_NUM; 
     }
 
+    public int CalcItemNum(int num) {
+        playerItemNum++;
+        return playerItemNum;
+    }
+    public int GetItemNum() {
+        return playerItemNum;
+    }
     
 
 

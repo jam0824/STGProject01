@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3a9c724ce6aac45846d3c0290d4f21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
   numberOfObjects: 5
   distanceBetweenObjects: 2
   angle: 45

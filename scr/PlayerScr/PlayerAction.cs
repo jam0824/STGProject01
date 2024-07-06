@@ -51,14 +51,21 @@ public class PlayerAction : MonoBehaviour
         while (isShooting) {
             if (Time.time >= nextFireTime) {
                 nextFireTime = Time.time + playerManager.fireRate;
-                Shoot(playerManager.bulletPrefab, 
-                    playerManager.firePoint.transform, 
-                    playerManager.GetNumberOfBullet(),
-                    playerManager.GetNumberOfBullet() * 5);
-                
+                FireBullet();
             }
             yield return null; // フレームごとにチェックを行う
         }
+    }
+
+    //放射状の自弾
+    private void FireBullet() {
+        float n = Mathf.Floor(GameManager.Instance.GetItemNum() / GameManager.Instance.POWERUP_ITEM_NUM);
+        int num = (int)n * 2 + 1;
+        // 角度は弾数*5
+        Shoot(playerManager.bulletPrefab,
+            playerManager.firePoint.transform,
+            num,
+            num * 5);
     }
 
     public void Shoot(
@@ -84,6 +91,7 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    //敵弾にあたった時に呼ばれる
     public void HitEnemyBullet(Collision collision) {
         StartBlinkPlayer(playerManager.GetPlayer());
         DeleteEnemyBullet(collision.gameObject);
@@ -113,6 +121,7 @@ public class PlayerAction : MonoBehaviour
         ToggleSkinnedMeshRenderers(player, true); 
     }
 
+    // メッシュのオンオフ
     void ToggleSkinnedMeshRenderers(GameObject player, bool enable) {
         // 親オブジェクトのすべての子オブジェクトからSkinned Mesh Rendererを取得
         SkinnedMeshRenderer[] skinnedMeshRenderers = player.GetComponentsInChildren<SkinnedMeshRenderer>();
