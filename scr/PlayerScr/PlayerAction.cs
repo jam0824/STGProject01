@@ -6,6 +6,9 @@ public class PlayerAction : MonoBehaviour
     private bool isShooting = false; // ”­Ë’†‚©‚Ç‚¤‚©‚Ìƒtƒ‰ƒO
     private float nextFireTime = 0f; // Ÿ‚É’e‚ğ”­Ë‚Å‚«‚éŠÔ
 
+    float TOP_BOTTOM = 4.0f;
+    float RIGHT_LEFT = 7.0f;
+
     // –³“GŠÔ‚Ì•b”
     public float invincibilityDuration = 2.0f;
     // “_–Å‚·‚éŠÔŠu
@@ -22,11 +25,21 @@ public class PlayerAction : MonoBehaviour
 
     public Vector3 PlayerMove(GameObject gameObject, Vector3 movement, float velocity) {
         if (movement == Vector3.zero) return gameObject.transform.position;
+
         Vector3 pos = gameObject.transform.position;
         pos.x += movement.x * velocity;
         pos.z += movement.z * velocity;
+        return FixPos(pos);
+    }
+
+    Vector3 FixPos(Vector3 pos) {
+        if (pos.x < -RIGHT_LEFT) pos.x = -RIGHT_LEFT;
+        if (pos.x > RIGHT_LEFT) pos.x = RIGHT_LEFT;
+        if (pos.z < -TOP_BOTTOM) pos.z = -TOP_BOTTOM;
+        if (pos.z > TOP_BOTTOM) pos.z = TOP_BOTTOM;
         return pos;
     }
+    
 
     public void ShootStart() {
         if (!isShooting) {
@@ -48,7 +61,6 @@ public class PlayerAction : MonoBehaviour
     }
 
     public void HitEnemyBullet(Collision collision) {
-        Debug.Log("EnemyBulletHit!!!!!!!!!!!!!!!!!!");
         StartBlinkPlayer(playerManager.GetPlayer());
         DeleteEnemyBullet(collision.gameObject);
     }

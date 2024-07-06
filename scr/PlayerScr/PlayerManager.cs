@@ -23,7 +23,7 @@ public class PlayerManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAction = GetComponent<PlayerAction>();
         playerAnimation = GetComponent<PlayerAnimation>();
-        firePoint.position = SetFirePoinst(firePoint);
+        //firePoint.position = SetFirePoinst(firePoint);
     }
 
     Vector3 SetFirePoinst(Transform firePoint) {

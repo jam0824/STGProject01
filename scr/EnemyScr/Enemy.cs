@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public float MoveSpeed;
     public float MoveDir;
     public GameObject ExplosionPrefab;
+    public GameObject ItemPrefab;
     private IEnemyMove enemyMove;
     Rigidbody rb;
     EnemyAnimation enemyAnimation;
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
         Hp -= damage;
         if (Hp <= 0) {
             GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
+            GameObject item = Object.Instantiate(ItemPrefab, this.transform.position, Quaternion.Euler(90, 0, 0));
             GameObject.Destroy(gameObject);
         }
     }
