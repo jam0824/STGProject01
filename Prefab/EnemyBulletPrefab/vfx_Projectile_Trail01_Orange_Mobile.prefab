@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 7042561109870499751}
   - component: {fileID: 8997264172631617615}
   - component: {fileID: 8111676027642639620}
+  - component: {fileID: 5907518182222669673}
   m_Layer: 6
   m_Name: vfx_Projectile_Trail01_Orange_Mobile
   m_TagString: EnemyBullet
@@ -245,6 +246,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f4879d6b7986bf45af179b8402b9838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5907518182222669673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630231616052194119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67770e585cee6649bedb64a3df78ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1969281422535108312

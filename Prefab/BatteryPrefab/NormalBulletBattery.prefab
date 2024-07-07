@@ -60,6 +60,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   initialTime: 2
   fireRate: 0.5
-  numberOfBullets: 1
+  numberOfBullets: 3
   bulletSpeed: 2
   spreadAngle: 30

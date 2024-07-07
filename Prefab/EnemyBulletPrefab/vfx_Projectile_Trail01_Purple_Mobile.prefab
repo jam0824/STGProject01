@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1015852494215193536}
   - component: {fileID: 1510588872555334173}
   - component: {fileID: -6396328312226454563}
+  - component: {fileID: -8885346490411532438}
   m_Layer: 6
   m_Name: vfx_Projectile_Trail01_Purple_Mobile
   m_TagString: EnemyBullet
@@ -97,6 +98,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f4879d6b7986bf45af179b8402b9838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8885346490411532438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558526362066048879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67770e585cee6649bedb64a3df78ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &919646987563783070
