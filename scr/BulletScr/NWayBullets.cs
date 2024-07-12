@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NormalBullets : MonoBehaviour, IShootingPattern
+public class NWayBullets : MonoBehaviour, IShootingPattern
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

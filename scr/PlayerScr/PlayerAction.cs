@@ -13,9 +13,10 @@ public class PlayerAction : MonoBehaviour
     private bool isMeshRendererEnable = true;
 
     PlayerManager playerManager;
-
+    GameManager gameManager;
 
     private void Start() {
+        gameManager = GameManager.Instance;
         playerManager = GetComponent<PlayerManager>();
         
     }
@@ -30,13 +31,11 @@ public class PlayerAction : MonoBehaviour
     }
 
     Vector3 FixPos(Vector3 pos) {
-        if (pos.x < -GameManager.Instance.RIGHT_LEFT) pos.x = -GameManager.Instance.RIGHT_LEFT;
-        if (pos.x > GameManager.Instance.RIGHT_LEFT) pos.x = GameManager.Instance.RIGHT_LEFT;
-        if (pos.z < -GameManager.Instance.TOP_BOTTOM) pos.z = -GameManager.Instance.TOP_BOTTOM;
-        if (pos.z > GameManager.Instance.TOP_BOTTOM) pos.z = GameManager.Instance.TOP_BOTTOM;
+        pos.x = Mathf.Clamp(pos.x, -gameManager.RIGHT_LEFT, gameManager.RIGHT_LEFT);
+        pos.z = Mathf.Clamp(pos.z, -gameManager.TOP_BOTTOM, gameManager.TOP_BOTTOM);
         return pos;
     }
-    
+
 
     public void ShootStart() {
         if (!isShooting) {
@@ -92,7 +91,7 @@ public class PlayerAction : MonoBehaviour
     }
 
     //“G’e‚É‚ ‚½‚Á‚½Žž‚ÉŒÄ‚Î‚ê‚é
-    public void HitEnemyBullet(Collision collision) {
+    public void HitEnemyBullet(Collider collision) {
         StartBlinkPlayer(playerManager.GetPlayer());
         DeleteEnemyBullet(collision.gameObject);
     }
