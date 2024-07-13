@@ -15,6 +15,9 @@ public class PlayerManager : MonoBehaviour
     PlayerInput playerInput;
     PlayerAction playerAction;
     PlayerAnimation playerAnimation;
+    StageManager stageManager;
+    GameObject BigGirlPrefab;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +27,8 @@ public class PlayerManager : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         playerAction = GetComponent<PlayerAction>();
         playerAnimation = GetComponent<PlayerAnimation>();
+        stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+        BigGirlPrefab = stageManager.BigGirlPrefab;
         //firePoint.position = SetFirePoinst(firePoint);
     }
 
@@ -48,6 +53,9 @@ public class PlayerManager : MonoBehaviour
     }
 
     public int GetNumberOfBullet() {return numberOfBullet; }
+
+    public bool GetBossMode() { return stageManager.BOSS_MODE; }
+    public GameObject GetBigGirlPrefab() { return BigGirlPrefab; }  
 
     
 }

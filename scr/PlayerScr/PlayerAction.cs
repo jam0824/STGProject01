@@ -36,6 +36,27 @@ public class PlayerAction : MonoBehaviour
         return pos;
     }
 
+    public void BigGirlMove(Vector3 pos, Vector3 movement, float velocity) {
+        if (!playerManager.GetBossMode()) return;
+        GameObject bigGirl = playerManager.GetBigGirlPrefab();
+        Vector3 bigGirlPos = bigGirl.transform.position;
+        float v = velocity * 0.5f;
+        if ((pos.x <= -gameManager.RIGHT_LEFT)&&(movement.x < 0)) {
+            bigGirlPos.x += -movement.x * v;
+        }
+        if ((pos.x >= gameManager.RIGHT_LEFT) && (movement.x > 0)) {
+            bigGirlPos.x += -movement.x * v;
+        }
+        if ((pos.z <= -gameManager.TOP_BOTTOM) && (movement.z < 0)) {
+            bigGirlPos.z += -movement.z * v;
+        }
+        if ((pos.z >= gameManager.TOP_BOTTOM) && (movement.z > 0)) {
+            bigGirlPos.z += -movement.z * v;
+        }
+        bigGirl.transform.position = bigGirlPos;
+
+    }
+
 
     public void ShootStart() {
         if (!isShooting) {

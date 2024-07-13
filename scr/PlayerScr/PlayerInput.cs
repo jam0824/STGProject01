@@ -12,6 +12,8 @@ public class PlayerInput : MonoBehaviour
         movement.z = Input.GetAxis("Vertical");
         player.transform.position = playerAction.PlayerMove(player, movement, velocity);
         playerAnimation.MoveAnimation(movement);
+
+        playerAction.BigGirlMove(player.transform.position, movement, velocity);
         
         //ƒVƒ‡ƒbƒg
         if (Input.GetKey(KeyCode.Z)) {

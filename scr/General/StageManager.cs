@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 
-public class JsonLoader : MonoBehaviour
+public class StageManager : MonoBehaviour
 {
     // デコードするデータの型を定義します
     [System.Serializable]
@@ -22,9 +22,13 @@ public class JsonLoader : MonoBehaviour
         public List<ObjectData> stage;
     }
 
+    public bool BOSS_MODE = true;
+    public GameObject BigGirlPrefab;
     Database databese;
     StageData stageData;
     float startTime = 0;
+
+    public GameObject GetBigGirlPrefab() { return BigGirlPrefab; }
 
     // JSONファイルを読み込み、デコードして返すメソッド
     public StageData LoadJsonFile(string fileName) {
