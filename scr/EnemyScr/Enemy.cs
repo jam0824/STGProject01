@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float MoveDir;
     public GameObject ExplosionPrefab;
     public GameObject ItemPrefab;
+    public bool isMoveWithScroll = false;
     private IEnemyMove enemyMove;
     Rigidbody rb;
     EnemyAnimation enemyAnimation;
@@ -18,7 +19,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
-        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed);
+        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed, isMoveWithScroll);
     }
 
     // Update is called once per frame
@@ -41,5 +42,8 @@ public class Enemy : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
+
+    public void SetMoveSpeed(float moveSpeed) {this.MoveSpeed = moveSpeed;}
+    public void SetMoveDir(float moveDir) { this.MoveDir = moveDir; }
 
 }

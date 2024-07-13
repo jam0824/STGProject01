@@ -13,7 +13,12 @@ public class StageManager : MonoBehaviour
         public string prefab;
         public float x;
         public float z;
+        public float angle;
+        public int numberOfObjects;
+        public float DistanceBetweenObjects;
         public string enemy;
+        public float moveSpeed;
+        public float moveDir;
     }
 
     [System.Serializable]
@@ -22,6 +27,7 @@ public class StageManager : MonoBehaviour
         public List<ObjectData> stage;
     }
 
+    public float scrollSpeed = 0.01f;
     public bool BOSS_MODE = true;
     public GameObject BigGirlPrefab;
     Database databese;
@@ -69,7 +75,13 @@ public class StageManager : MonoBehaviour
         if (objData.type == "formation") {
             GameObject formationPrefab = Instantiate(prefab, position, Quaternion.identity);
             GameObject enemyPrefab = databese.GetEnemyPrefab(objData.enemy);
-            formationPrefab.GetComponent<IFormation>().StartFormation(enemyPrefab);
+            formationPrefab.GetComponent<IFormation>().StartFormation(
+                enemyPrefab,
+                objData.numberOfObjects,
+                objData.DistanceBetweenObjects,
+                objData.angle,
+                objData.moveSpeed,
+                objData.moveDir);
         }
         
 

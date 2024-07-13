@@ -228,6 +228,7 @@ MonoBehaviour:
   MoveDir: 10
   ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
+  isMoveWithScroll: 0
 --- !u!114 &4010089556695145309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -839,6 +840,10 @@ PrefabInstance:
     - target: {fileID: 9150547488052142394, guid: 72bfc43cb2aa2304e8fed7ac1a9c0b07, type: 3}
       propertyPath: numberOfBullets
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9150547488052142394, guid: 72bfc43cb2aa2304e8fed7ac1a9c0b07, type: 3}
+      propertyPath: randomFireTiming
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

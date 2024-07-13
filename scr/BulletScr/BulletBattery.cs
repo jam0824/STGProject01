@@ -9,6 +9,7 @@ public class BulletBattery : MonoBehaviour
     public int numberOfBullets;
     public float bulletSpeed;
     public float spreadAngle;
+    public float randomFireTiming = 1f;
 
     private float startFireTime = 0f;
     private float nextFireTime = 0f;
@@ -27,7 +28,12 @@ public class BulletBattery : MonoBehaviour
     {
         if (Time.time < startFireTime) return;
         if (Time.time > nextFireTime) {
-            Shoot();
+            if (randomFireTiming == 1) {
+                Shoot();
+            }
+            else {
+                if(Random.value < randomFireTiming) Shoot();
+            }
             nextFireTime = Time.time + 1f / fireRate;
         }
     }

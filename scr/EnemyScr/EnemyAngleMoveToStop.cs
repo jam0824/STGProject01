@@ -9,6 +9,9 @@ public class EnemyAngleMoveToStop : EnemyAngleMove
     Rigidbody rb;
     Utilities utilities;
     float rotationSpeed = 1.0f;
+    bool isMoveWithScroll = false;
+    StageManager stageManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +28,7 @@ public class EnemyAngleMoveToStop : EnemyAngleMove
             StopMove();
         if ((isLookAtPlayer)&&(rb.linearVelocity == Vector3.zero))
             this.transform.rotation = utilities.LookAtPlayer(player.transform, this.transform, rotationSpeed);
+        if (isMoveWithScroll) MoveWithScroll(stageManager.scrollSpeed);
     }
 
     void StopMove() {
