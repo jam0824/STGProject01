@@ -24,4 +24,5 @@ public class Utilities : MonoBehaviour
         // 現在の回転からプレイヤーの方向への回転を徐々に適用
         return Quaternion.Lerp(me.rotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
+    
 }

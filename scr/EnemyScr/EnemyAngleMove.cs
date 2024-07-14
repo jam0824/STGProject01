@@ -6,10 +6,12 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
     EnemyAnimation enemyAnimation;
     bool isMoveWithScroll = false;
     StageManager stageManager;
+    Utilities utilities;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+        utilities = new Utilities();
     }
 
 
@@ -31,6 +33,8 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
         Vector3 direction = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
         rb.linearVelocity = direction * speed;
         transform.rotation = enemyAnimation.EnemyRotation(direction);
+        transform.rotation = enemyAnimation.WorldRotateX(this.transform, GameManager.Instance.GetEnemyXRotation());
+
     }
 
 }

@@ -17,4 +17,12 @@ public class EnemyAnimation : MonoBehaviour
     public Quaternion EnemyRotation(Vector3 direction) {
        return Quaternion.LookRotation(direction);
     }
+
+    public Quaternion WorldRotateX(Transform target, float angle) {
+        Quaternion currentRotation = target.rotation;
+        // 45度回転するためのQuaternionを作成（ワールド座標系のX軸に対して）
+        Quaternion rotationX = Quaternion.Euler(angle, 0, 0);
+        // 新しい回転を適用
+        return rotationX * currentRotation;
+    }
 }

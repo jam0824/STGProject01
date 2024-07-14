@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public float TOP_BOTTOM = 4.0f;
     public float RIGHT_LEFT = 7.0f;
     public int POWERUP_ITEM_NUM = 5;
+    // 敵キャラを画面に対して60度傾ける（見やすくする）
+    private float ENEMY_X_ROTATION = 60f;
 
     private int playerItemNum = 0;
 
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
         return playerItemNum;
     }
     
-
+    public float GetEnemyXRotation() {
+        return ENEMY_X_ROTATION;
+    }
 
 }
