@@ -46,4 +46,8 @@ public class Enemy : MonoBehaviour
     public void SetMoveSpeed(float moveSpeed) {this.MoveSpeed = moveSpeed;}
     public void SetMoveDir(float moveDir) { this.MoveDir = moveDir; }
 
+    public void PlayAttack() {
+        enemyAnimation.AttackTrigger();
+    }
+
 }

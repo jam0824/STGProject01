@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class EnemyAnimation : MonoBehaviour
 {
+    Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,5 +25,19 @@ public class EnemyAnimation : MonoBehaviour
         Quaternion rotationX = Quaternion.Euler(angle, 0, 0);
         // êVÇµÇ¢âÒì]ÇìKóp
         return rotationX * currentRotation;
+    }
+
+    public void AttackTrigger() {
+        if (!TriggerExists("attackTrigger")) return;
+        anim.SetTrigger("attackTrigger");
+    }
+
+    bool TriggerExists(string name) {
+        foreach (AnimatorControllerParameter parameter in anim.parameters) {
+            if (parameter.type == AnimatorControllerParameterType.Trigger && parameter.name == name) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyAngleMove : MonoBehaviour,IEnemyMove
@@ -11,7 +12,7 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
     void Start()
     {
         stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
-        utilities = new Utilities();
+        utilities = GameObject.Find("GameManager").GetComponent<Utilities>();
     }
 
 

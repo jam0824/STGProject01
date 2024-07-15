@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5070888475807533034}
   - component: {fileID: 1785137473912898412}
   - component: {fileID: 4597499323282950578}
-  - component: {fileID: 839919408723416635}
+  - component: {fileID: 2028577524472814679}
   m_Layer: 9
   m_Name: Beez_Honey
   m_TagString: Untagged
@@ -131,8 +131,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &839919408723416635
-CapsuleCollider:
+--- !u!135 &2028577524472814679
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,10 +149,8 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 4
-  m_Direction: 1
+  serializedVersion: 3
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1112612525593247969
 GameObject:
@@ -700,6 +698,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 1630231616052194119, guid: 3a62aac322a1316479681201b68d3389, type: 3}
+    - target: {fileID: 9150547488052142394, guid: 72bfc43cb2aa2304e8fed7ac1a9c0b07, type: 3}
+      propertyPath: parentObject
+      value: 
+      objectReference: {fileID: 48171901311703590}
     - target: {fileID: 9150547488052142394, guid: 72bfc43cb2aa2304e8fed7ac1a9c0b07, type: 3}
       propertyPath: numberOfBullets
       value: 1

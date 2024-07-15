@@ -10,10 +10,12 @@ public class BulletBattery : MonoBehaviour
     public float bulletSpeed;
     public float spreadAngle;
     public float randomFireTiming = 1f;
+    public GameObject parentObject;
 
     private float startFireTime = 0f;
     private float nextFireTime = 0f;
     private IShootingPattern shootingPattern;
+    private Enemy enemy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +23,7 @@ public class BulletBattery : MonoBehaviour
         startFireTime = Time.time + initialTime;
         shootingPattern = GetComponent<IShootingPattern>();
         player = GameObject.FindWithTag("Player").transform;
+        enemy = parentObject.GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class BulletBattery : MonoBehaviour
             else {
                 if(Random.value < randomFireTiming) Shoot();
             }
+            
             nextFireTime = Time.time + 1f / fireRate;
         }
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
+using System.IO;
 
 public class StageManager : MonoBehaviour
 {
@@ -34,8 +35,11 @@ public class StageManager : MonoBehaviour
     StageData stageData;
     float startTime = 0;
 
+    string jsonFile = "StripOff/stage1.json";
+
     public GameObject GetBigGirlPrefab() { return BigGirlPrefab; }
 
+    /*
     // JSONファイルを読み込み、デコードして返すメソッド
     public StageData LoadJsonFile(string fileName) {
         TextAsset jsonTextAsset = Resources.Load<TextAsset>(fileName);
@@ -46,11 +50,24 @@ public class StageManager : MonoBehaviour
         StageData data = JsonUtility.FromJson<StageData>(jsonTextAsset.text);
         return data;
     }
+    */
+    public StageData LoadJsonFile(string fileName) {
+        string filePath = Path.Combine(Application.dataPath, fileName);
+
+        if (!File.Exists(filePath)) {
+            Debug.LogError("ファイルが見つかりません: " + filePath);
+            return null;
+        }
+
+        string jsonText = File.ReadAllText(filePath);
+        StageData data = JsonUtility.FromJson<StageData>(jsonText);
+        return data;
+    }
 
     void Start() {
         startTime = Time.time;
         databese = GetComponent<Database>();
-        stageData = LoadJsonFile("stage1");
+        stageData = LoadJsonFile(jsonFile);
 
 
     }

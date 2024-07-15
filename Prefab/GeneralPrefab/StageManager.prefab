@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9bb43c5875e7c44b1774ad33ec708e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 0.01
+  BOSS_MODE: 1
+  BigGirlPrefab: {fileID: 0}
 --- !u!114 &7302791630384891650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,8 +63,14 @@ MonoBehaviour:
   formationPrefabs:
   - {fileID: 4455118301526815301, guid: 4b2cac6d433e1eb4a9e41f71000ef44e, type: 3}
   formationKeys:
-  - formation01
+  - lineFormation
   enemyPrefabs:
   - {fileID: 4241480823725042201, guid: c079bbb4898259b4190778fc8bbdf017, type: 3}
+  - {fileID: 48171901311703590, guid: 34a553fa3f330184d982d3b40e4a3f39, type: 3}
+  - {fileID: 2119936863457827912, guid: 91453c4e5e4c96f458832cd60688dfc9, type: 3}
+  - {fileID: 7651133178188311248, guid: 753563fb24122294abf991f21759b5f8, type: 3}
   enemyKeys:
   - hachi01
+  - beez01
+  - slime01
+  - fire01
