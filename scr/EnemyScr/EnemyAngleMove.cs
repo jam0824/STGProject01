@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyAngleMove : MonoBehaviour,IEnemyMove
 {
+    public bool isLookDirection = true;
     Rigidbody rb;
     EnemyAnimation enemyAnimation;
     bool isMoveWithScroll = false;
@@ -33,7 +34,7 @@ public class EnemyAngleMove : MonoBehaviour,IEnemyMove
         float angleRad = angle * Mathf.Deg2Rad;
         Vector3 direction = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
         rb.linearVelocity = direction * speed;
-        transform.rotation = enemyAnimation.EnemyRotation(direction);
+        if(isLookDirection) transform.rotation = enemyAnimation.EnemyRotation(direction);
         transform.rotation = enemyAnimation.WorldRotateX(this.transform, GameManager.Instance.GetEnemyXRotation());
 
     }

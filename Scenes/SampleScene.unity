@@ -1978,6 +1978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab888ee7eb65ea40b37ea1f59b35453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLookDirection: 1
   stopTime: 3
   isLookAtPlayer: 1
 --- !u!1001 &1681996537
@@ -3627,6 +3628,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: StageManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: enemyKeys.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: 'enemyKeys.Array.data[4]'
+      value: grim01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: 'enemyKeys.Array.data[5]'
+      value: midboss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: 'enemyPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2598460064172592752, guid: 6a01d1a882266144fa3684a007dd8219, type: 3}
+    - target: {fileID: 7302791630384891650, guid: 284b0481ac8acf7479283f1fb9fd3086, type: 3}
+      propertyPath: 'enemyPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1863452063631340607, guid: c5afab9ccea9bb64cba2f63a524ab550, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -10,13 +10,26 @@
         {"time":8,"type":"formation","prefab":"lineFormation","x":15,"z":-1,"angle":170,"numberOfObjects":3,"DistanceBetweenObjects":2,
             "enemy":"slime01","moveSpeed":1,"moveDir":170},
         
-        {"time":16.0,"type":"formation","prefab":"lineFormation","x":2,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
+        {"time":16.0,"type":"formation","prefab":"lineFormation","x":4,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"fire01","moveSpeed":3,"moveDir":-90},
         {"time":18.0,"type":"formation","prefab":"lineFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"fire01","moveSpeed":3,"moveDir":-90},
-        {"time":20.0,"type":"formation","prefab":"lineFormation","x":-2,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
-            "enemy":"fire01","moveSpeed":3,"moveDir":-90}
+        {"time":20.0,"type":"formation","prefab":"lineFormation","x":-4,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
+            "enemy":"fire01","moveSpeed":3,"moveDir":-90},
 
+        {"time":24,"type":"formation","prefab":"lineFormation","x":-9,"z":2,"angle":10,"numberOfObjects":1,"DistanceBetweenObjects":2,
+            "enemy":"grim01","moveSpeed":1,"moveDir":0},
+        {"time":24,"type":"formation","prefab":"lineFormation","x":9,"z":2,"angle":10,"numberOfObjects":1,"DistanceBetweenObjects":2,
+            "enemy":"grim01","moveSpeed":1,"moveDir":180},
 
+        {"time":34,"type":"formation","prefab":"lineFormation","x":-4,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
+            "enemy":"beez01","moveSpeed":2,"moveDir":-90},
+        {"time":36,"type":"formation","prefab":"lineFormation","x":4,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
+            "enemy":"beez01","moveSpeed":2,"moveDir":-90},
+        {"time":38,"type":"formation","prefab":"lineFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
+            "enemy":"beez01","moveSpeed":2,"moveDir":-90},
+
+        {"time":45.0,"type":"formation","prefab":"lineFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
+            "enemy":"midboss","moveSpeed":1,"moveDir":-90}
     ]
 }
