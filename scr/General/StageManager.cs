@@ -30,11 +30,12 @@ public class StageManager : MonoBehaviour
 
     public float scrollSpeed = 0.01f;
     public bool BOSS_MODE = true;
-    public bool PROGRESS_MODE = true;
+    bool progressMode = true;
     public GameObject BigGirlPrefab;
     Database databese;
     StageData stageData;
     float startTime = 0;
+    float stopTime = 0;
 
     string jsonFile = "StripOff/stage1.json";
 
@@ -75,7 +76,7 @@ public class StageManager : MonoBehaviour
     void Update() {
         if (stageData == null) return;
         for (int i = 0; i < stageData.stage.Count; i++) {
-            if (PROGRESS_MODE) {
+            if (progressMode) {
                 bool isExec = MakeObject(stageData.stage[i]);
                 if (isExec) stageData.stage.RemoveAt(i);
             }
@@ -114,6 +115,18 @@ public class StageManager : MonoBehaviour
 
 
         return isExec;
+    }
+
+    public bool stopProgress() {
+        this.progressMode = false;
+        stopTime = Time.time;
+        return this.progressMode;
+    }
+
+    public bool startProgress() {
+        this.progressMode = true; 
+        startTime = stopTime;
+        return this.progressMode;
     }
 
 }

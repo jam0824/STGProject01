@@ -943,6 +943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3624345945138512153}
   - component: {fileID: 4666313924680220897}
+  - component: {fileID: -7027711349817009441}
   - component: {fileID: 4828279729464769701}
   - component: {fileID: -6438104220255264620}
   - component: {fileID: 2118481196301753905}
@@ -998,7 +999,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4828279729464769701
+--- !u!114 &-7027711349817009441
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1006,6 +1007,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863452063631340607}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197b655b29e80a441aa399a2fa3388ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hp: 20
+  MoveSpeed: 2
+  MoveDir: -90
+  ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
+  ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
+  isMoveWithScroll: 0
+--- !u!114 &4828279729464769701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863452063631340607}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a7a3578199e5c47a324725a36f12fd, type: 3}
   m_Name: 
@@ -1016,7 +1035,6 @@ MonoBehaviour:
   ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
   isMoveWithScroll: 0
-  isProgress: 0
 --- !u!114 &-6438104220255264620
 MonoBehaviour:
   m_ObjectHideFlags: 0
