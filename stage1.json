@@ -29,7 +29,7 @@
         {"time":38,"type":"formation","prefab":"lineFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
             "enemy":"beez01","moveSpeed":2,"moveDir":-90},
 
-        {"time":45.0,"type":"formation","prefab":"lineFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
+        {"time":45.0,"type":"formation","prefab":"lineFormation","x":0,"z":5.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"midboss","moveSpeed":1,"moveDir":-90}
     ]
 }

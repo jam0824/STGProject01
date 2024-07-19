@@ -6,11 +6,7 @@ public class EnemyAngleMoveToStop : EnemyAngleMove
     public bool isLookAtPlayer = true;
     float startTime;
     GameObject player;
-    Rigidbody rb;
-    Utilities utilities;
     float rotationSpeed = 1.0f;
-    bool isMoveWithScroll = false;
-    StageManager stageManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

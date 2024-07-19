@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 3624345945138512153}
   - component: {fileID: 4666313924680220897}
   - component: {fileID: 4828279729464769701}
-  - component: {fileID: 8573560608289022148}
+  - component: {fileID: -6438104220255264620}
   - component: {fileID: 2118481196301753905}
   - component: {fileID: 3278687775896971037}
   - component: {fileID: 2041158892884535839}
@@ -1011,12 +1011,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hp: 200
-  MoveSpeed: 1
+  MoveSpeed: 2
   MoveDir: -90
   ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
   isMoveWithScroll: 0
---- !u!114 &8573560608289022148
+  isProgress: 0
+--- !u!114 &-6438104220255264620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1025,12 +1026,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1863452063631340607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab888ee7eb65ea40b37ea1f59b35453, type: 3}
+  m_Script: {fileID: 11500000, guid: ac0a0e0c5cb90b449af811ed02ab0f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLookDirection: 1
-  stopTime: 3
-  isLookAtPlayer: 0
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &2118481196301753905
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4905,7 +4904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6568307475161799844, guid: 69df7ae5d44583e428d6ae6554c58bea, type: 3}
       propertyPath: m_startOnAwakeDelay
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7888309584717559813, guid: 69df7ae5d44583e428d6ae6554c58bea, type: 3}
       propertyPath: m_bulletNum

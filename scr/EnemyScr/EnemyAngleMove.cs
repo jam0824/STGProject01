@@ -4,11 +4,12 @@ using UnityEngine;
 public class EnemyAngleMove : MonoBehaviour,IEnemyMove
 {
     public bool isLookDirection = true;
-    Rigidbody rb;
     EnemyAnimation enemyAnimation;
-    bool isMoveWithScroll = false;
-    StageManager stageManager;
-    Utilities utilities;
+
+    protected Rigidbody rb;
+    protected bool isMoveWithScroll = false;
+    protected StageManager stageManager;
+    protected Utilities utilities;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

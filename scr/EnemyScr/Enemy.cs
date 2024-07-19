@@ -8,14 +8,20 @@ public class Enemy : MonoBehaviour
     public GameObject ExplosionPrefab;
     public GameObject ItemPrefab;
     public bool isMoveWithScroll = false;
+    public bool isProgress = true;
     private IEnemyMove enemyMove;
     Rigidbody rb;
     EnemyAnimation enemyAnimation;
+    StageManager stageManager;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (!isProgress) {
+            stageManager = GameObject.Find("StageManager").GetComponent<StageManager>();
+            stageManager.PROGRESS_MODE = false;
+        }
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
