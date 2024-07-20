@@ -1089,8 +1089,9 @@ MonoBehaviour:
   Hp: 200
   MoveSpeed: 2
   MoveDir: -90
-  ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
+  ExplosionPrefab: {fileID: 3065202132528497936, guid: 3e75ebdfc963e89428f70f012690b7b2, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
+  isHuman: 1
   isMoveWithScroll: 0
   healthBar: {fileID: 8602756720369715062}
 --- !u!114 &-6438104220255264620

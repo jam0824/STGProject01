@@ -32,6 +32,7 @@ public class Item : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.tag == "Player") {
+            SoundManager.Instance.PlaySE(GameConstants.SE_GET_ITEM);
             GetItem();
         }
     }

@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -7,17 +8,20 @@ public class Enemy : MonoBehaviour
     public float MoveDir;
     public GameObject ExplosionPrefab;
     public GameObject ItemPrefab;
+    public bool isHuman = false;
     public bool isMoveWithScroll = false;
     private protected IEnemyMove enemyMove;
     protected float maxHp = 10;
     protected Rigidbody rb;
     protected EnemyAnimation enemyAnimation;
+    protected Vector3 oldPos;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         maxHp = Hp;
+        oldPos = transform.position;
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
@@ -27,7 +31,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if((isHuman)&&(oldPos != transform.position)) {
+            enemyAnimation.ChangeAnimationForHuman(oldPos, transform.position);
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -35,7 +41,7 @@ public class Enemy : MonoBehaviour
         Damage(collision.gameObject);
     }
 
-    private void Damage(GameObject playerBullet) {
+    protected void Damage(GameObject playerBullet) {
         float damage = playerBullet.GetComponent<PlayerBulletConfig>().Damage;
         SoundManager.Instance.PlaySE(GameConstants.SE_PLAYER_FIRE_HIT);
         Hp -= damage;

@@ -14,6 +14,7 @@ public class EnemyMidBoss : Enemy
         healthBar.value = Hp;
         StopProgress();
         maxHp = Hp;
+        oldPos = transform.position;
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
@@ -27,18 +28,7 @@ public class EnemyMidBoss : Enemy
     private void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag != "PlayerBullet") return;
         Damage(collision.gameObject);
-    }
-    private void Damage(GameObject playerBullet) {
-        float damage = playerBullet.GetComponent<PlayerBulletConfig>().Damage;
-        SoundManager.Instance.PlaySE("HitBullet01");
-        Hp -= damage;
         healthBar.value = Hp;
-        if (Hp <= 0) {
-            stageManager.StartProgress();
-            GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
-            GameObject item = Object.Instantiate(ItemPrefab, this.transform.position, Quaternion.Euler(90, 0, 0));
-            GameObject.Destroy(gameObject);
-        }
     }
 
 }

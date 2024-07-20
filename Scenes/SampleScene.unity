@@ -1415,12 +1415,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f5cd7f006acce2548bbf388fac6a5c20, type: 3}
   - {fileID: 8300000, guid: adaad0fd676c3aa4f90e28adf9776810, type: 3}
   - {fileID: 8300000, guid: d377a0bd2abd723488abfb7d9f004717, type: 3}
+  - {fileID: 8300000, guid: 2779e52f2ccf235428bf00df10c21b3d, type: 3}
   seClipNames:
   - ExplosionSmall
   - HitBullet
   - Flash
   - ExplosionMiddle
   - ExplosionLarge
+  - GetItem
 --- !u!4 &926652200
 Transform:
   m_ObjectHideFlags: 0
@@ -4032,6 +4034,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3502664735124062513, guid: 139190be084194042aeac86a6731b01a, type: 3}
+      propertyPath: POWERUP_ITEM_NUM
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8029978468158247832, guid: 139190be084194042aeac86a6731b01a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.035988495

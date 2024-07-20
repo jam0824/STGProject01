@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyAnimation : MonoBehaviour
 {
     Animator anim;
+    string currentMove = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,5 +40,42 @@ public class EnemyAnimation : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void ChangeAnimationForHuman(Vector3 mePos, Vector3 targetPos) {
+        float angle = GetAngleFromVector(mePos, targetPos);
+        // Debug.Log("angle=" + angle);
+        if ((angle >= 0) && (angle < 45) && currentMove != "MoveRight") {
+            currentMove = "MoveRight";
+            anim.SetTrigger("MoveRight");
+            return;
+        }
+        if ((angle >= 45) && (angle < 135) && currentMove != "MoveFwd") {
+            currentMove = "MoveFwd";
+            anim.SetTrigger("MoveFwd");
+            return;
+        }
+        if ((angle >= 135) && (angle < 225) && currentMove != "MoveLeft") {
+            currentMove = "MoveLeft";
+            anim.SetTrigger("MoveLeft");
+            return;
+        }
+        if ((angle >= 225) && (angle < 315) && currentMove != "MoveBack") {
+            currentMove = "MoveBack";
+            anim.SetTrigger("MoveBack");
+            return;
+        }
+        if ((angle >= 315) && (angle < 360) && currentMove != "MoveRight") {
+            currentMove = "MoveRight";
+            anim.SetTrigger("MoveRight");
+            return;
+        }
+    }
+
+    //二つのベクトルから向いている方向の角度を取得する
+    public float GetAngleFromVector(Vector3 mePos, Vector3 targetPos) {
+        Vector3 direction = mePos - targetPos;
+        float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
+        return angle;
     }
 }
