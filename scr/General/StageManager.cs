@@ -88,22 +88,15 @@ public class StageManager : MonoBehaviour
         if (Time.time < exeTime) return isExec;
         isExec = true;
 
-        //nullのエラー処理なし。ミスをエラーで気づくようにする
-        GameObject prefab = databese.GetFormationPrefab(objData.prefab);
         Vector3 position = new Vector3(objData.x, 0, objData.z);
 
         if (objData.type == "formation") {
-            GameObject formationPrefab = Instantiate(prefab, position, Quaternion.identity);
-            GameObject enemyPrefab = databese.GetEnemyPrefab(objData.enemy);
-            formationPrefab.GetComponent<IFormation>().StartFormation(
-                enemyPrefab,
-                objData.numberOfObjects,
-                objData.DistanceBetweenObjects,
-                objData.angle,
-                objData.moveSpeed,
-                objData.moveDir);
+            MakeFormation(objData, position);
         }
-        
+        else if (objData.type == "sprite") {
+            MakeSprite(objData, position);
+        }
+
 
         Debug.Log("時間: " + objData.time + 
             "タイプ: " + objData.type + 
@@ -114,6 +107,28 @@ public class StageManager : MonoBehaviour
 
 
         return isExec;
+    }
+
+    GameObject MakeFormation(ObjectData objData, Vector3 position) {
+        //nullのエラー処理なし。ミスをエラーで気づくようにする
+        GameObject prefab = databese.GetFormationPrefab(objData.prefab);
+
+        GameObject formationPrefab = Instantiate(prefab, position, Quaternion.identity);
+        GameObject enemyPrefab = databese.GetEnemyPrefab(objData.enemy);
+        formationPrefab.GetComponent<IFormation>().StartFormation(
+            enemyPrefab,
+            objData.numberOfObjects,
+            objData.DistanceBetweenObjects,
+            objData.angle,
+            objData.moveSpeed,
+            objData.moveDir);
+        return formationPrefab;
+    }
+
+    GameObject MakeSprite(ObjectData objData, Vector3 position) {
+        GameObject prefab = databese.GetSpritePrefab(objData.prefab);
+        GameObject spritePrefab = Instantiate(prefab, position, Quaternion.identity);
+        return spritePrefab;
     }
 
     public bool StopProgress() {

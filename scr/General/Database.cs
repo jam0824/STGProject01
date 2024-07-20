@@ -7,6 +7,8 @@ public class Database : MonoBehaviour
     public List<string> formationKeys;
     public List<GameObject> enemyPrefabs;
     public List<string> enemyKeys;
+    public List<GameObject> spritePrefabs;
+    public List<string> spriteKeys;
 
     public GameObject GetFormationPrefab(string prefabName) {
         return GetPrefabFromKeys(prefabName, formationPrefabs, formationKeys);
@@ -14,6 +16,10 @@ public class Database : MonoBehaviour
 
     public GameObject GetEnemyPrefab(string prefabName) {
         return GetPrefabFromKeys(prefabName, enemyPrefabs, enemyKeys);
+    }
+
+    public GameObject GetSpritePrefab(string prefabName) {
+        return GetPrefabFromKeys(prefabName, spritePrefabs, spriteKeys);
     }
 
 
