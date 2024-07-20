@@ -35,6 +35,8 @@ public class StageManager : MonoBehaviour
     Database databese;
     StageData stageData;
     float startTime = 0;
+    float stopTime = 0;
+    float minusTime = 0;
 
     string jsonFile = "StripOff/stage1.json";
 
@@ -77,7 +79,7 @@ public class StageManager : MonoBehaviour
         for (int i = 0; i < stageData.stage.Count; i++) {
             if (progressMode) {
                 bool isExec = MakeObject(stageData.stage[i]);
-                if (isExec) stageData.stage.RemoveAt(i);
+                if (isExec)stageData.stage.RemoveAt(i);
             }
         }
     }
@@ -85,7 +87,8 @@ public class StageManager : MonoBehaviour
     bool MakeObject(ObjectData objData) {
         bool isExec = false;
         float exeTime = startTime + objData.time;
-        if (Time.time < exeTime) return isExec;
+        // minusTimeは止めていた時間分。中ボスなど
+        if (Time.time - minusTime < exeTime) return isExec;
         isExec = true;
 
         Vector3 position = new Vector3(objData.x, 0, objData.z);
@@ -133,6 +136,7 @@ public class StageManager : MonoBehaviour
 
     public bool StopProgress() {
         this.progressMode = false;
+        stopTime = Time.time;
         return this.progressMode;
     }
 
@@ -140,8 +144,8 @@ public class StageManager : MonoBehaviour
     // よってステージファイルも以降1秒から。
     // 実行したデータは消しているので前の1秒に戻ることはない
     public bool StartProgress() {
-        this.progressMode = true; 
-        startTime = Time.time;
+        this.progressMode = true;
+        minusTime = Time.time - stopTime;
         return this.progressMode;
     }
 

@@ -230,6 +230,7 @@ MonoBehaviour:
   MoveDir: 180
   ExplosionPrefab: {fileID: 7534583396468061900, guid: 93c81c9d5b1ab674091dd70d7afb6b64, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
+  isHuman: 0
   isMoveWithScroll: 0
 --- !u!114 &7830347004041025469
 MonoBehaviour:

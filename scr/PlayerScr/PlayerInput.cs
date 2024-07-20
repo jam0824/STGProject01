@@ -16,7 +16,7 @@ public class PlayerInput : MonoBehaviour
         playerAction.BigGirlMove(player.transform.position, movement, velocity);
         
         //ƒVƒ‡ƒbƒg
-        if (Input.GetKey(KeyCode.Z)) {
+        if ((Input.GetKey(KeyCode.Z))||(Input.GetButton("Fire1"))) {
             playerAction.ShootStart();
         }
         else {

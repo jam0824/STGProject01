@@ -50,6 +50,7 @@ public class NWayBullets : MonoBehaviour, IShootingPattern
             // Create the bullet and set its direction
             GameObject bullet = Object.Instantiate(bulletPrefab, enemyTransform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().linearVelocity = bulletDir * bulletSpeed;
+            bullet.transform.rotation = Quaternion.LookRotation(bulletDir);
         }
     }
 

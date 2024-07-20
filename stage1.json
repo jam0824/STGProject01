@@ -42,6 +42,13 @@
             "enemy":"beez01","moveSpeed":2,"moveDir":-90},
 
         {"time":45.0,"type":"formation","prefab":"lineFormation","x":0,"z":5.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
-            "enemy":"midboss","moveSpeed":1,"moveDir":-90}
+            "enemy":"midboss","moveSpeed":1,"moveDir":-90},
+
+        {"time":48,"type":"formation","prefab":"randomFormation","x":0,"z":4.0,"angle":90,"numberOfObjects":15,"DistanceBetweenObjects":1,
+            "enemy":"poho01","moveSpeed":1,"moveDir":-90},
+        {"time":50,"type":"formation","prefab":"lineFormation","x":7,"z":2,"angle":0,"numberOfObjects":2,"DistanceBetweenObjects":2,
+            "enemy":"rabby02","moveSpeed":0.5,"moveDir":225},
+        {"time":52,"type":"formation","prefab":"lineFormation","x":-7,"z":2,"angle":180,"numberOfObjects":2,"DistanceBetweenObjects":2,
+            "enemy":"rabby02","moveSpeed":0.5,"moveDir":315}
     ]
 }

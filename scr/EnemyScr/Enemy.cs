@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         Damage(collision.gameObject);
     }
 
-    protected void Damage(GameObject playerBullet) {
+    void Damage(GameObject playerBullet) {
         float damage = playerBullet.GetComponent<PlayerBulletConfig>().Damage;
         SoundManager.Instance.PlaySE(GameConstants.SE_PLAYER_FIRE_HIT);
         Hp -= damage;
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
-    private void MakeEffect(float maxHp) {
+    protected void MakeEffect(float maxHp) {
         GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
         GameObject item = Object.Instantiate(ItemPrefab, this.transform.position, Quaternion.Euler(90, 0, 0));
         item.GetComponent<Item>().SetPlayer(player);
