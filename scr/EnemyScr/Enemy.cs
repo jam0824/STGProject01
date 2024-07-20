@@ -15,17 +15,22 @@ public class Enemy : MonoBehaviour
     protected Rigidbody rb;
     protected EnemyAnimation enemyAnimation;
     protected Vector3 oldPos;
+    protected float score = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        init();
+        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed, isMoveWithScroll);
+    }
+    protected void init() {
         maxHp = Hp;
+        score = maxHp * GameConstants.SCORE_TIMES;
         oldPos = transform.position;
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
-        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed, isMoveWithScroll);
     }
 
     // Update is called once per frame
@@ -47,6 +52,7 @@ public class Enemy : MonoBehaviour
         Hp -= damage;
         if (Hp <= 0) {
             MakeEffect(maxHp);
+            GameManager.Instance.AddTotalScore(score);
             GameObject.Destroy(gameObject);
         }
     }
@@ -62,6 +68,7 @@ public class Enemy : MonoBehaviour
 
     public void SetMoveSpeed(float moveSpeed) {this.MoveSpeed = moveSpeed;}
     public void SetMoveDir(float moveDir) { this.MoveDir = moveDir; }
+    public float GetScore() { return this.score;}
 
     public void PlayAttack() {
         enemyAnimation.AttackTrigger();

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class BossSub : MonoBehaviour
 {
-    public float Hp = 10;
-    public GameObject ExplosionPrefab;
-    public GameObject SUB_ROOT_PREFAB;
+    [SerializeField] float Hp = 10;
+    [SerializeField] GameObject ExplosionPrefab;
+    [SerializeField] GameObject SUB_ROOT_PREFAB;
     Rigidbody rb;
 
 

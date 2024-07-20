@@ -10,15 +10,14 @@ public class EnemyMidBoss : Enemy
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        InitHealthBar();
+        init();
+        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed, isMoveWithScroll);
+    }
+    void InitHealthBar() {
         healthBar.maxValue = Hp;
         healthBar.value = Hp;
         StopProgress();
-        maxHp = Hp;
-        oldPos = transform.position;
-        rb = GetComponent<Rigidbody>();
-        enemyAnimation = GetComponent<EnemyAnimation>();
-        enemyMove = GetComponent<IEnemyMove>();
-        enemyMove.EnemyMove(rb, enemyAnimation, MoveDir, MoveSpeed, isMoveWithScroll);
     }
 
     void StopProgress() {

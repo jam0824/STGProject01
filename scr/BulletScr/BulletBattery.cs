@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class BulletBattery : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    Transform player;
-    public float initialTime = 2;
-    public float fireRate;
-    public int numberOfBullets;
-    public float bulletSpeed;
-    public float spreadAngle;
-    public float randomFireTiming = 1f;
-    public GameObject parentObject;
+    [SerializeField]GameObject bulletPrefab;
+    [SerializeField]float initialTime = 2;
+    [SerializeField]float fireRate;
+    [SerializeField]int numberOfBullets;
+    [SerializeField]float bulletSpeed;
+    [SerializeField]float spreadAngle;
+    [SerializeField]float randomFireTiming = 1f;
+    [SerializeField]GameObject parentObject;
 
+    Transform player;
     private float startFireTime = 0f;
     private float nextFireTime = 0f;
     private IShootingPattern shootingPattern;

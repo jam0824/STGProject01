@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     private float ENEMY_X_ROTATION = 60f;
 
     private int playerItemNum = 0;
+    private float totalScore = 0;
 
 
     // プロパティを通じてインスタンスにアクセス
@@ -77,4 +78,8 @@ public class GameManager : MonoBehaviour
         return ENEMY_X_ROTATION;
     }
 
+    public void AddTotalScore(float score) {
+        totalScore += score;
+    }
+    public float GetTotalScore() { return totalScore; }
 }

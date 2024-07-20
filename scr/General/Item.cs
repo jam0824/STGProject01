@@ -39,6 +39,7 @@ public class Item : MonoBehaviour
 
     void GetItem() {
         GameManager.Instance.CalcItemNum(1);
+        GameManager.Instance.AddTotalScore(GameConstants.SCORE_TIMES);
         Destroy(gameObject);
     }
 }
