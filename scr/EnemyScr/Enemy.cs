@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public bool isHuman = false;
     public bool isMoveWithScroll = false;
     private protected IEnemyMove enemyMove;
+    protected GameObject player;
     protected float maxHp = 10;
     protected Rigidbody rb;
     protected EnemyAnimation enemyAnimation;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
         maxHp = Hp;
         score = maxHp * GameConstants.SCORE_TIMES;
         oldPos = transform.position;
+        player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
@@ -59,6 +61,7 @@ public class Enemy : MonoBehaviour
     private void MakeEffect(float maxHp) {
         GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
         GameObject item = Object.Instantiate(ItemPrefab, this.transform.position, Quaternion.Euler(90, 0, 0));
+        item.GetComponent<Item>().SetPlayer(player);
         string effectName = "";
         if (maxHp < 5) effectName = GameConstants.SE_EXPLOSION_SMALL;
         else if (maxHp < 10) effectName = GameConstants.SE_EXPLOSION_MIDDLE;
