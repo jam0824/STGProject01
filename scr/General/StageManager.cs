@@ -35,7 +35,6 @@ public class StageManager : MonoBehaviour
     Database databese;
     StageData stageData;
     float startTime = 0;
-    float stopTime = 0;
 
     string jsonFile = "StripOff/stage1.json";
 
@@ -117,15 +116,17 @@ public class StageManager : MonoBehaviour
         return isExec;
     }
 
-    public bool stopProgress() {
+    public bool StopProgress() {
         this.progressMode = false;
-        stopTime = Time.time;
         return this.progressMode;
     }
 
-    public bool startProgress() {
+    // ボスを倒した後はまた1秒からスタートになる
+    // よってステージファイルも以降1秒から。
+    // 実行したデータは消しているので前の1秒に戻ることはない
+    public bool StartProgress() {
         this.progressMode = true; 
-        startTime = stopTime;
+        startTime = Time.time;
         return this.progressMode;
     }
 
