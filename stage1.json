@@ -1,14 +1,18 @@
 {
     "stage":[
-        {"time":2,"type":"formation","prefab":"lineFormation","x":-4,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
+        {"time":2,"type":"formation","prefab":"lineFormation","x":-3,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
             "enemy":"beez01","moveSpeed":1,"moveDir":-90},
-        {"time":2,"type":"formation","prefab":"lineFormation","x":-15,"z":-1,"angle":10,"numberOfObjects":3,"DistanceBetweenObjects":2,
+        {"time":2,"type":"formation","prefab":"lineFormation","x":-15,"z":-1,"angle":10,"numberOfObjects":2,"DistanceBetweenObjects":2,
             "enemy":"slime01","moveSpeed":1,"moveDir":10},
+        {"time":3,"type":"formation","prefab":"lineFormation","x":-8,"z":3,"angle":180,"numberOfObjects":2,"DistanceBetweenObjects":2,
+            "enemy":"rabby01","moveSpeed":0.5,"moveDir":340},
         
-        {"time":8,"type":"formation","prefab":"lineFormation","x":4,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
+        {"time":8,"type":"formation","prefab":"lineFormation","x":3,"z":4.0,"angle":90,"numberOfObjects":5,"DistanceBetweenObjects":1,
             "enemy":"beez01","moveSpeed":1,"moveDir":-90},
-        {"time":8,"type":"formation","prefab":"lineFormation","x":15,"z":-1,"angle":170,"numberOfObjects":3,"DistanceBetweenObjects":2,
+        {"time":8,"type":"formation","prefab":"lineFormation","x":15,"z":-1,"angle":170,"numberOfObjects":2,"DistanceBetweenObjects":2,
             "enemy":"slime01","moveSpeed":1,"moveDir":170},
+        {"time":9,"type":"formation","prefab":"lineFormation","x":7,"z":2,"angle":0,"numberOfObjects":2,"DistanceBetweenObjects":2,
+            "enemy":"rabby01","moveSpeed":0.5,"moveDir":200},
         
         {"time":16.0,"type":"formation","prefab":"lineFormation","x":4,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"fire01","moveSpeed":3,"moveDir":-90},
@@ -16,6 +20,12 @@
             "enemy":"fire01","moveSpeed":3,"moveDir":-90},
         {"time":20.0,"type":"formation","prefab":"lineFormation","x":-4,"z":4.0,"angle":90,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"fire01","moveSpeed":3,"moveDir":-90},
+
+        {"time":22,"type":"formation","prefab":"lineFormation","x":7,"z":-3,"angle":0,"numberOfObjects":5,"DistanceBetweenObjects":1,
+            "enemy":"slime01","moveSpeed":1,"moveDir":140},
+        {"time":23,"type":"formation","prefab":"lineFormation","x":-7,"z":-3,"angle":180,"numberOfObjects":5,"DistanceBetweenObjects":1,
+            "enemy":"slime01","moveSpeed":1,"moveDir":40},
+
 
         {"time":24,"type":"formation","prefab":"lineFormation","x":-9,"z":2,"angle":10,"numberOfObjects":1,"DistanceBetweenObjects":2,
             "enemy":"grim01","moveSpeed":1,"moveDir":0},

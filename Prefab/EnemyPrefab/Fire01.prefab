@@ -5166,7 +5166,7 @@ MonoBehaviour:
   Hp: 5
   MoveSpeed: 3
   MoveDir: -90
-  ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
+  ExplosionPrefab: {fileID: 8607965011044453351, guid: 863e6735dbf0b77498e78b1f9eb4d74f, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
   isMoveWithScroll: 0
 --- !u!114 &7161152941398310509
@@ -5193,6 +5193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab888ee7eb65ea40b37ea1f59b35453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLookDirection: 1
   stopTime: 1
   isLookAtPlayer: 1
 --- !u!54 &2020344300634069205

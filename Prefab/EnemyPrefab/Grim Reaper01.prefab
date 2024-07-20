@@ -225,10 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a7a3578199e5c47a324725a36f12fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 50
+  Hp: 30
   MoveSpeed: 0.5
   MoveDir: 180
-  ExplosionPrefab: {fileID: 975911313764975413, guid: fc9871af6c3f3014abfe26be865d63e6, type: 3}
+  ExplosionPrefab: {fileID: 7534583396468061900, guid: 93c81c9d5b1ab674091dd70d7afb6b64, type: 3}
   ItemPrefab: {fileID: 6192901948857238304, guid: daca4b94e3c8185488eee0b96f3b99a6, type: 3}
   isMoveWithScroll: 0
 --- !u!114 &7830347004041025469

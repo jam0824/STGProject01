@@ -72,6 +72,7 @@ public class PlayerAction : MonoBehaviour
             if (Time.time >= nextFireTime) {
                 nextFireTime = Time.time + playerManager.fireRate;
                 FireBullet();
+                SoundManager.Instance.PlaySE(GameConstants.SE_PLAYER_FIRE_FLASH);
             }
             yield return null; // フレームごとにチェックを行う
         }

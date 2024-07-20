@@ -13,6 +13,7 @@ public class EnemyMidBoss : Enemy
         healthBar.maxValue = Hp;
         healthBar.value = Hp;
         StopProgress();
+        maxHp = Hp;
         rb = GetComponent<Rigidbody>();
         enemyAnimation = GetComponent<EnemyAnimation>();
         enemyMove = GetComponent<IEnemyMove>();
@@ -29,6 +30,7 @@ public class EnemyMidBoss : Enemy
     }
     private void Damage(GameObject playerBullet) {
         float damage = playerBullet.GetComponent<PlayerBulletConfig>().Damage;
+        SoundManager.Instance.PlaySE("HitBullet01");
         Hp -= damage;
         healthBar.value = Hp;
         if (Hp <= 0) {
