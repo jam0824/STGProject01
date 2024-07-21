@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //人型の時は移動方向に合わせてアニメーションさせる
         if((isHuman)&&(oldPos != transform.position)) {
             enemyAnimation.ChangeAnimationForHuman(oldPos, transform.position);
         }
@@ -61,8 +62,9 @@ public class Enemy : MonoBehaviour
     protected void MakeEffect(float maxHp) {
         GameObject explosion = Object.Instantiate(ExplosionPrefab, this.transform.position, Quaternion.identity);
         GameObject item = Object.Instantiate(ItemPrefab, this.transform.position, Quaternion.Euler(90, 0, 0));
-        item.GetComponent<Item>().SetPlayer(player);
+        item.GetComponent<Item>().SetPlayer(player);    //Item側でもFindをさせたくないためここでplayerを渡す
         string effectName = "";
+        //HPで音の大きさを変える
         if (maxHp < 5) effectName = GameConstants.SE_EXPLOSION_SMALL;
         else if (maxHp < 10) effectName = GameConstants.SE_EXPLOSION_MIDDLE;
         else effectName = GameConstants.SE_EXPLOSION_LARGE;
@@ -73,6 +75,7 @@ public class Enemy : MonoBehaviour
     public void SetMoveDir(float moveDir) { this.MoveDir = moveDir; }
     public float GetScore() { return this.score;}
 
+    //敵に攻撃モーションをつけたいならこれを呼ぶ
     public void PlayAttack() {
         enemyAnimation.AttackTrigger();
     }

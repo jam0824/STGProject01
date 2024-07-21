@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
 
         playerAction.BigGirlMove(player.transform.position, movement, velocity);
         
-        //ショット
+        //ショット。zキーまたはゲームパッドのボタン1
         if ((Input.GetKey(KeyCode.Z))||(Input.GetButton("Fire1"))) {
             playerAction.ShootStart();
         }

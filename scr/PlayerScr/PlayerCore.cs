@@ -16,6 +16,7 @@ public class PlayerCore : MonoBehaviour
         
     }
 
+    //“G‚Ì’e‚É“–‚½‚Á‚½ŽžŒÄ‚Î‚ê‚é
     private void OnTriggerEnter(Collider collision) {
         if (collision.gameObject.tag == "EnemyBullet") {
             action.HitEnemyBullet(collision);

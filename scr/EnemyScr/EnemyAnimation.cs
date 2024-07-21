@@ -16,10 +16,12 @@ public class EnemyAnimation : MonoBehaviour
         
     }
 
+    //direction方向に向く
     public Quaternion EnemyRotation(Vector3 direction) {
        return Quaternion.LookRotation(direction);
     }
 
+    //worldのx軸に対して傾ける。敵の顔を見やすくする。
     public Quaternion WorldRotateX(Transform target, float angle) {
         Quaternion currentRotation = target.rotation;
         // 45度回転するためのQuaternionを作成（ワールド座標系のX軸に対して）
@@ -28,11 +30,13 @@ public class EnemyAnimation : MonoBehaviour
         return rotationX * currentRotation;
     }
 
+    //攻撃モーションをつけたいとき
     public void AttackTrigger() {
         if (!TriggerExists("attackTrigger")) return;
         anim.SetTrigger("attackTrigger");
     }
 
+    //アニメーションに指定したアニメーションがあるかチェック
     bool TriggerExists(string name) {
         foreach (AnimatorControllerParameter parameter in anim.parameters) {
             if (parameter.type == AnimatorControllerParameterType.Trigger && parameter.name == name) {
@@ -42,6 +46,7 @@ public class EnemyAnimation : MonoBehaviour
         return false;
     }
 
+    //人型の場合、進んでいる方向に合わせてモーションを変える
     public void ChangeAnimationForHuman(Vector3 mePos, Vector3 targetPos) {
         float angle = GetAngleFromVector(mePos, targetPos);
         // Debug.Log("angle=" + angle);
@@ -72,9 +77,10 @@ public class EnemyAnimation : MonoBehaviour
         }
     }
 
-    //二つのベクトルから向いている方向の角度を取得する
+    //二つのベクトルから向かう方向の角度を取得する
     public float GetAngleFromVector(Vector3 mePos, Vector3 targetPos) {
-        Vector3 direction = mePos - targetPos;
+        Vector3 direction = mePos - targetPos;  //targetの方向を出す
+        // アークタンジェントで角度を出す
         float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
         return angle;
     }

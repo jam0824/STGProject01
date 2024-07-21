@@ -6,17 +6,19 @@ public class GameManager : MonoBehaviour
     // シングルトンのインスタンスを保持するための変数
     private static GameManager _instance;
 
-    private int BULLET_NUM = 0;
+    private int BULLET_NUM = 0; //今画面にある弾の数
 
+    //画面サイズ
     public float TOP_BOTTOM = 4.0f;
     public float RIGHT_LEFT = 7.0f;
-    //アイテム何個でパワーアップするか
-    public int POWERUP_ITEM_NUM = 100;
-    // 敵キャラを画面に対して60度傾ける（見やすくする）
-    private float ENEMY_X_ROTATION = 60f;
+    
+    public int POWERUP_ITEM_NUM = 100;  //アイテム何個でパワーアップするか
+    private float ENEMY_X_ROTATION = 60f;   // 敵キャラを画面に対して60度傾ける（見やすくする）
 
-    private int playerItemNum = 0;
+    private int playerItemNum = 0;  //アイテム数
+    private int playerGazeNum = 0;  //かすり数
     private float totalScore = 0;
+    
 
 
     // プロパティを通じてインスタンスにアクセス
@@ -55,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     // ゲームマネージャーの更新処理
     void Update() {
-        // 更新コードをここに追加
+
     }
 
     public int CalcBulletNum(int num) {
@@ -82,4 +84,8 @@ public class GameManager : MonoBehaviour
         totalScore += score;
     }
     public float GetTotalScore() { return totalScore; }
+    public void AddGaze() {
+        playerGazeNum++;
+    }
+    public int GetGazeNum() {return playerGazeNum;}
 }

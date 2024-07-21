@@ -24,7 +24,7 @@ public class NWayBullets : MonoBehaviour, IShootingPattern
         //y‚ğ0‚É‚·‚é
         Vector3 playerPos = playerTransform.position;
         playerPos.y = 0;
-        // Calculate the base direction towards the player
+        // Player‚Ì•ûŒü‚ğo‚µ‚Ä•W€‰»
         Vector3 directionToPlayer = (playerPos - enemyTransform.position).normalized;
 
         //’e”‚ª1‚Ì‚Í•ÊiangleStep‚Å0Š„‚É‚È‚é‚½‚ß)
@@ -33,27 +33,28 @@ public class NWayBullets : MonoBehaviour, IShootingPattern
             return;
         }
 
-        // Calculate the initial angle
+        // 30“x‚¾‚Æ‚µ‚½‚çplayer‚ğ‹²‚ñ‚Å15“x15“x‚É‚È‚é
         float halfSpread = spreadAngle / 2;
+        //’e‚Ì”­ËŠp“x‚ÌŠÔŠu‚ğo‚·
         float angleStep = spreadAngle / (numberOfBullets - 1);
 
         for (int i = 0; i < numberOfBullets; i++) {
-            // Calculate the current angle
+            // ‚±‚Ì’e‚ğ”­Ë‚·‚éŠp“x‚ğo‚·
             float currentAngle = -halfSpread + angleStep * i;
 
-            // Calculate the rotation
+            // y²‚ğ’†S‚É¡‚ÌŠp“x‚Å‰ñ“]‚³‚¹‚é
             Quaternion rotation = Quaternion.AngleAxis(currentAngle, Vector3.up);
 
-            // Calculate the bullet direction
+            // ’e‚Ì•ûŒü‚ğo‚·
             Vector3 bulletDir = rotation * directionToPlayer;
 
-            // Create the bullet and set its direction
             GameObject bullet = Object.Instantiate(bulletPrefab, enemyTransform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().linearVelocity = bulletDir * bulletSpeed;
-            bullet.transform.rotation = Quaternion.LookRotation(bulletDir);
+            bullet.transform.rotation = Quaternion.LookRotation(bulletDir); //’e‚ÌŠp“x‚ğ‰ñ“]•ûŒü‚É‚·‚é
         }
     }
 
+    //‚P”­‚¾‚¯Œ‚‚Â‚Æ‚«‚Í‚±‚Á‚¿
     void OneShoot(GameObject bulletPrefab, Transform enemyTransform, float bulletSpeed, Vector3 directionToPlayer) {
         GameObject bullet = Object.Instantiate(bulletPrefab, enemyTransform.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody>().linearVelocity = directionToPlayer * bulletSpeed;

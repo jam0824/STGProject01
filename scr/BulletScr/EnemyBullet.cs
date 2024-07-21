@@ -7,6 +7,7 @@ public class EnemyBullet : MonoBehaviour
     // 加速度 (秒あたり)
     float accelerationSpeed = 0f;
     Rigidbody rb;
+    bool isGaze = false;    //かすり判定したか
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,5 +52,15 @@ public class EnemyBullet : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, rotationAngle, 0);
         // 現在の速度ベクトルに回転を適用
         return rotation * currentVelocity;
+    }
+
+    //かすり判定
+    private void OnTriggerEnter(Collider other) {
+        if((!isGaze)&&(other.gameObject.tag == "GazeTrigger")) {
+            isGaze = true;
+            GameManager.Instance.AddGaze();
+            GameManager.Instance.AddTotalScore(GameConstants.SCORE_GAZE);
+            SoundManager.Instance.PlaySE(GameConstants.SE_GAZE);
+        }
     }
 }

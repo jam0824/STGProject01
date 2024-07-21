@@ -21,11 +21,12 @@ public class EnemyStopMove : MonoBehaviour,IEnemyMove
     // Update is called once per frame
     void Update()
     {
-        // 現在位置を更新
         transform.position = SmoothMovement(this.journeyLength, this.startPosition, this.targetPosition);
     }
 
+    //徐々に遅くなる移動
     Vector3 SmoothMovement(float journeyLength, Vector3 startPosition, Vector3 targetPosition) {
+        //経過時間による移動分
         float distCovered = (Time.time - startTime) * speed;
         float fractionOfJourney = distCovered / journeyLength;
 
@@ -37,9 +38,12 @@ public class EnemyStopMove : MonoBehaviour,IEnemyMove
 
     public void EnemyMove(Rigidbody rb, EnemyAnimation enemyAnimation, float angle, float speed, bool isMoveWithScroll) {
         this.speed = speed;
-        float angleRad = angle * Mathf.Deg2Rad;
+        float angleRad = angle * Mathf.Deg2Rad; //角度をラジアンに変換
+        //方向を出す
         Vector3 direction = new Vector3(Mathf.Cos(angleRad), 0, Mathf.Sin(angleRad));
+        //向きを移動する方向に向ける
         transform.rotation = enemyAnimation.EnemyRotation(direction);
+        // worldに対してxで傾ける。顔を見やすくするため
         transform.rotation = enemyAnimation.WorldRotateX(this.transform, GameManager.Instance.GetEnemyXRotation());
     }
 }

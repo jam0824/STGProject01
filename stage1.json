@@ -49,6 +49,13 @@
         {"time":50,"type":"formation","prefab":"lineFormation","x":7,"z":2,"angle":0,"numberOfObjects":2,"DistanceBetweenObjects":2,
             "enemy":"rabby02","moveSpeed":0.5,"moveDir":225},
         {"time":52,"type":"formation","prefab":"lineFormation","x":-7,"z":2,"angle":180,"numberOfObjects":2,"DistanceBetweenObjects":2,
-            "enemy":"rabby02","moveSpeed":0.5,"moveDir":315}
+            "enemy":"rabby02","moveSpeed":0.5,"moveDir":315},
+
+        {"time":62,"type":"formation","prefab":"lineFormation","x":-4,"z":4,"angle":0,"numberOfObjects":2,"DistanceBetweenObjects":8,
+            "enemy":"momo01","moveSpeed":0.5,"moveDir":-90},
+        {"time":62,"type":"formation","prefab":"lineFormation","x":0,"z":4,"angle":0,"numberOfObjects":1,"DistanceBetweenObjects":4,
+            "enemy":"momo01","moveSpeed":0.8,"moveDir":-90},
+
+        {"time":78,"type":"sprite","prefab":"Warning","x":0,"z":0}
     ]
 }

@@ -3,9 +3,9 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     float startTime = 0;
-    float chaseSpeed = 10f;
+    float chaseSpeed = 10f; //Player追尾になった時の速度
     Vector3 startPos;
-    bool isChase = false;
+    bool isChase = false;   //Player追尾モードか
     GameObject player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,9 +25,13 @@ public class Item : MonoBehaviour
         }
     }
 
+    //Playerを追尾させる
     void ChasePlayer(Vector3 playerPos, Vector3 mePos) {
+        //Playerの方向を出す
         Vector3 direction = (playerPos - mePos).normalized;
+        //前の更新から進んだ距離を加える
         Vector3 newPosition = transform.position + direction * chaseSpeed * Time.deltaTime;
+        //縦シューティングなのでy = 0
         newPosition.y = 0f;
         transform.position = newPosition;
     }
@@ -38,7 +42,7 @@ public class Item : MonoBehaviour
         return new Vector3(startPos.x, 0, startPos.z + z);
     }
 
-    // (2,2)を頂点とする二次関数
+    // x=2,z=2を頂点とする二次関数
     float GetHeight(float t) {
         float z = -0.5f * t * t + 2f * t;
         return z;

@@ -54,6 +54,7 @@ public class StageManager : MonoBehaviour
         return data;
     }
     */
+    //開発中はこっちで呼ぶ。Resourceにファイルがあるとgit管理ができないため
     public StageData LoadJsonFile(string fileName) {
         string filePath = Path.Combine(Application.dataPath, fileName);
 
@@ -79,7 +80,7 @@ public class StageManager : MonoBehaviour
         for (int i = 0; i < stageData.stage.Count; i++) {
             if (progressMode) {
                 bool isExec = MakeObject(stageData.stage[i]);
-                if (isExec)stageData.stage.RemoveAt(i);
+                if (isExec)stageData.stage.RemoveAt(i); //実行された行はデータから削除する
             }
         }
     }
@@ -134,18 +135,17 @@ public class StageManager : MonoBehaviour
         return spritePrefab;
     }
 
+    // 時間計測を止める
     public bool StopProgress() {
         this.progressMode = false;
         stopTime = Time.time;
         return this.progressMode;
     }
 
-    // ボスを倒した後はまた1秒からスタートになる
-    // よってステージファイルも以降1秒から。
-    // 実行したデータは消しているので前の1秒に戻ることはない
+    //時間計測を再開する
     public bool StartProgress() {
         this.progressMode = true;
-        minusTime = Time.time - stopTime;
+        minusTime = Time.time - stopTime;   //何秒止まっていたか
         return this.progressMode;
     }
 

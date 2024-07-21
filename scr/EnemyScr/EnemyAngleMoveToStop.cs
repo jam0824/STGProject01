@@ -23,6 +23,7 @@ public class EnemyAngleMoveToStop : EnemyAngleMove
         if (player == null) return;
         if((stopTime != 0)&&(Time.time - startTime >= stopTime)) 
             StopMove();
+        //~‚Ü‚Á‚Ä‚½‚çƒvƒŒƒCƒ„[‚Ì‚Ù‚¤‚ğŒü‚­
         if ((isLookAtPlayer)&&(rb.linearVelocity == Vector3.zero)) {
             this.transform.rotation = utilities.LookAtPlayer(player.transform, this.transform, rotationSpeed);
         }

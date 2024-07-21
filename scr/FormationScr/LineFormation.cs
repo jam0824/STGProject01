@@ -16,6 +16,7 @@ public class LineFormation : MonoBehaviour,IFormation
         ArrangeObjectsInLine(prefab, moveSpeed, moveDir);
     }
 
+    //任意の角度に敵を並べる
     void ArrangeObjectsInLine(GameObject enemy, float moveSpeed, float moveDir) {
         float radian = angle * Mathf.Deg2Rad; // 角度をラジアンに変換
         Vector3 direction = new Vector3(Mathf.Cos(radian), 0, Mathf.Sin(radian)); // 配置方向の計算
@@ -26,7 +27,7 @@ public class LineFormation : MonoBehaviour,IFormation
             Enemy e = obj.GetComponent<Enemy>();
             e.SetMoveDir(moveDir);
             e.SetMoveSpeed(moveSpeed);
-            obj.transform.parent = null;
+            obj.transform.parent = null;    //親を抜く。Formationを消すと敵も消えてしまうため
         }
         Destroy(gameObject);
     }

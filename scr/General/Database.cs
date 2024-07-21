@@ -22,7 +22,7 @@ public class Database : MonoBehaviour
         return GetPrefabFromKeys(prefabName, spritePrefabs, spriteKeys);
     }
 
-
+    //key‚É‘Î‰ž‚µ‚½prefab‚ð•Ô‚·
     GameObject GetPrefabFromKeys(string prefabName, List<GameObject> prefabs, List<string> keys) {
         int index = -1;
         for (int i = 0; i < keys.Count; i++) {
